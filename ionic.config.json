@@ -1,0 +1,7 @@
+{
+  "name": "img2text-ion",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
