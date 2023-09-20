@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'img-cropper',
+    loadChildren: () => import('./components/img-cropper/img-cropper.module').then( m => m.ImgCropperPageModule)
   }
 ];
 
