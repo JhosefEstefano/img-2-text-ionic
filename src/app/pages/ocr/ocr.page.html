@@ -44,7 +44,7 @@
 
               <ion-item button (click)="seleccionarSerie()">
                 <ion-thumbnail slot="start">
-                  <img alt="Serie" [src]=" imgSerie === '' ? 'assets/img/no-seleccionada.png' : imgFecha" />
+                  <img alt="Serie" [src]=" imgSerie === '' ? 'assets/img/no-seleccionada.png' : imgSerie" />
                 </ion-thumbnail>
                 <ion-label>Serie</ion-label>
                 <ion-icon slot="end"  name="camera-outline"></ion-icon>
@@ -90,18 +90,18 @@
                 <ion-datetime-button datetime="datetime"></ion-datetime-button>
                 <ion-modal [keepContentsMounted]="true">
                   <ng-template>
-                    <ion-datetime id="datetime"></ion-datetime>
+                    <ion-datetime  [(ngModel)]="fecha"  id="datetime"></ion-datetime>
                   </ng-template>
                 </ion-modal>
               </ion-item>
               <ion-item>
-                <ion-input label="Serie" label-placement="floating" placeholder="Enter text" id="serie"></ion-input>
+                <ion-input  [(ngModel)]="serie"  label="Serie" label-placement="floating" placeholder="Enter text" id="serie"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-input label="No. Fac." autocomplete="off" label-placement="floating" placeholder="Enter text" id="noFac" ></ion-input>
+                <ion-input  [(ngModel)]="noFac"  label="No. Fac." autocomplete="off" label-placement="floating" placeholder="Enter text" id="noFac" ></ion-input>
               </ion-item>
               <ion-item>
-                <ion-input label="Total" label-placement="floating" placeholder="Enter text" id="total"></ion-input>
+                <ion-input style="text-align: right;" type="number"  [(ngModel)]="total" label="Total" label-placement="floating" placeholder="Enter text" id="total"></ion-input>
               </ion-item>
 
             </ion-list>

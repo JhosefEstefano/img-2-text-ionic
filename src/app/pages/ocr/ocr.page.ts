@@ -11,6 +11,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-ocr',
@@ -30,7 +31,7 @@ export class OcrPage implements OnInit {
   imgTotal: string = '';
 
   nit: string = '';
-  fecha: Date = new Date();
+  fecha: string = new Date().toISOString();
   serie: string = '';
   noFac: string = '';
   total: number = 0;
@@ -107,13 +108,13 @@ export class OcrPage implements OnInit {
         }else{
           const imageFile = new File([imgBlob!], imageName, { type: 'image/jpeg' });
           this.recognizeIMG(imageFile).then((res) => {
-            
+            // console.log('fecha',new Date(formatDate(res,'yyyy-MM-dd HH:ss', 'en_US')));
             const validateDate = (res: any) => isNaN(Date.parse(res));
 
             if(validateDate(res)){
               this.message('La fecha no es valida','danger')
             }else{
-              this.fecha = new Date(Date.parse(res));
+              this.fecha = new Date(Date.parse(res)).toISOString();
             }
           });
         } 
