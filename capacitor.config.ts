@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'img2text-ion',
+  appId: 'kelpie.solutions.img2text',
+  appName: 'Kelpie OCR',
   webDir: 'www',
   server: {
     androidScheme: 'https'
