@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Kelpie OCR</string>
+    <string name="title_activity_main">Kelpie OCR</string>
+    <string name="package_name">kelpie.solutions.img2text</string>
+    <string name="custom_url_scheme">kelpie.solutions.img2text</string>
+</resources>
