@@ -27,7 +27,7 @@
             <ion-list>
               <ion-item button (click)="seleccionarNit()">
                 <ion-thumbnail slot="start">
-                  <img alt="NIT" src="assets/img/no-seleccionada.png" />
+                  <img alt="NIT"  [src]=" imgNit === '' ? 'assets/img/no-seleccionada.png' : imgNit"/>
                 </ion-thumbnail>
                 <ion-label>NIT</ion-label>
                 <ion-icon slot="end"  name="camera-outline"></ion-icon>
@@ -35,7 +35,7 @@
 
               <ion-item button (click)="seleccionarFecha()">
                 <ion-thumbnail slot="start">
-                  <img alt="fecha" src="assets/img/no-seleccionada.png" />
+                  <img alt="fecha"  [src]=" imgFecha === '' ? 'assets/img/no-seleccionada.png' : imgFecha"/>
                 </ion-thumbnail>
                 <ion-label>Fecha</ion-label>
                 <ion-icon slot="end"  name="camera-outline"></ion-icon>
@@ -44,7 +44,7 @@
 
               <ion-item button (click)="seleccionarSerie()">
                 <ion-thumbnail slot="start">
-                  <img alt="Serie" src="assets/img/no-seleccionada.png" />
+                  <img alt="Serie" [src]=" imgSerie === '' ? 'assets/img/no-seleccionada.png' : imgFecha" />
                 </ion-thumbnail>
                 <ion-label>Serie</ion-label>
                 <ion-icon slot="end"  name="camera-outline"></ion-icon>
@@ -53,7 +53,7 @@
 
               <ion-item button (click)="seleccionarNoFac()">
                 <ion-thumbnail slot="start">
-                  <img alt="NoFac" src="assets/img/no-seleccionada.png" />
+                  <img alt="NoFac"  [src]=" imgNoFac === '' ? 'assets/img/no-seleccionada.png' : imgNoFac"/>
                 </ion-thumbnail>
                 <ion-label>No. Fac.</ion-label>
                 <ion-icon slot="end"  name="camera-outline"></ion-icon>
@@ -61,7 +61,7 @@
 
               <ion-item button (click)="seleccionarTotal()">
                 <ion-thumbnail slot="start">
-                  <img alt="Total" src="assets/img/no-seleccionada.png" />
+                  <img alt="Total"  [src]=" imgTotal === '' ? 'assets/img/no-seleccionada.png' : imgTotal"/>
                 </ion-thumbnail>
                 <ion-label>Total</ion-label>
                 <ion-icon slot="end"  name="camera-outline"></ion-icon>
@@ -83,7 +83,7 @@
             <ion-list>
 
               <ion-item>
-                <ion-input label="NIT" label-placement="floating" placeholder="Enter text" id="nit"></ion-input>
+                <ion-input label="NIT" [(ngModel)]="nit" label-placement="floating" placeholder="Enter text" id="nit"></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label>Fecha</ion-label>

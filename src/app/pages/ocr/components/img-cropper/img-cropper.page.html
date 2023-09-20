@@ -1,16 +1,39 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+      <ion-button color="medium" (click)="cancel()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
-    <ion-title>Welcome</ion-title>
+    <ion-title>Imagen</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+      <ion-button (click)="confirm()" [strong]="true">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-item>
+  <!-- <ion-item>
     <ion-input labelPlacement="stacked" label="Enter your name" [(ngModel)]="name" placeholder="Your name"></ion-input>
-  </ion-item>
+  </ion-item> -->
+
+
+  <!-- <input type="file" (change)="fileChangeEvent($event)" /> -->
+<ion-button expand="full" (click)="selectImage()">Seleccionar Imagen</ion-button>
+
+  <image-cropper
+    #cropper
+    [imageBase64]="myImage"
+    [aspectRatio]="1 / 1" 
+    [hideResizeSquares]="isMobile"
+    [cropperMinHeight]="5"  
+    format="png"
+    output="base64" 
+    [maintainAspectRatio]="false" 
+    [autoCrop]="false"
+    (imageLoaded)="imageLoaded()" 
+    (loadImageFailed)="imageLoadedFail()"
+    ></image-cropper>
+
 </ion-content>
